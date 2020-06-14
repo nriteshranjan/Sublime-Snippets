@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+const int MAX_N = 1e5 + 5;
+vector<int> g[MAX_N];
+int N, vis[MAX_N];
+void dfs(int s)
+{
+	vis[s] = 1;
+	for (auto it : g[s])
+	{
+		if (!vis[it])
+			dfs(it);
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>DFS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
