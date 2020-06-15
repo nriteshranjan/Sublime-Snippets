@@ -2,7 +2,7 @@
 	<content><![CDATA[
 const int MAX_N = 1e5 + 5;
 vector<int> g[MAX_N];
-int N, vis[MAX_N];
+int N, M, vis[MAX_N];
 void dfs(int s)
 {
 	vis[s] = 1;
