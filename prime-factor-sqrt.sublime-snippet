@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-set<int> getFactor(int n)
+set<int> factors(int n)
 {
 	set<int> ret;
 	bool flag = 0;
@@ -24,7 +24,7 @@ set<int> getFactor(int n)
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>getFactorsSqrt</tabTrigger>
+	<tabTrigger>Factorsqrt</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
