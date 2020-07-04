@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-int fastExpo(int x, unsigned int y)
+int power(int x, unsigned int y)
 {
 	if (y == 0) return 1;
 	int sm = fastExpo(x, y / 2);
