@@ -37,6 +37,12 @@
         "find(${1:})",
         "empty()", 
         "push(${1:})",
-        "__gcd(${1:}, ${2:})",     
+        "__gcd(${1:}, ${2:})",
+        "lower_bound(${1:})",
+        "upper_bound(${1:})",
+        "size()",
+        "push_front()",
+        "clear();",
+        "continue;",     
     ]
 }
