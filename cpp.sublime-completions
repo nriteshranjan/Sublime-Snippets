@@ -43,6 +43,13 @@
         "size()",
         "push_front()",
         "clear();",
-        "continue;",     
+        "continue;",
+        "sort(${1:}, ${2:});", 
+        "begin()",
+        "end()" ,
+        "binary_search()",
+        "__builtin_popcountll(${1:})",
+        "tolower(${1:})",
+        "toupper(${1:})",
     ]
 }
