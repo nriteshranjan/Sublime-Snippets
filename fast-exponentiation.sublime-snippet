@@ -3,7 +3,7 @@
 int power(int x, unsigned int y)
 {
 	if (y == 0) return 1;
-	int sm = fastExpo(x, y / 2);
+	int sm = power(x, y / 2);
 	sm *= sm;
 	if (y % 2 == 0) return sm;
 	return sm * x;
