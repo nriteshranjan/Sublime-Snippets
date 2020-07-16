@@ -14,14 +14,13 @@
 #define  mii            map<int,int>
 #define  eb             emplace_back
 #define  float          long double
-#define  double         long double
 #define  all(v)         v.begin(), v.end()
 #define  f(i,n)         for(int i=0;i<n;++i)
-#define  test           int tc__; cin>>tc__; while(tc__--)
+#define  test           int tc_; cin>>tc_; while(tc_--)
 #define  rep(i,s,e)     for(int i=s;i<e;++i)
 #define  reset(v)       memset((v), 0, sizeof(v))
 #define  deb(x)         cerr << #x << " is " << x << endl;
-#define  fast_io        ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define  fast_io        ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 using namespace std;
 
 signed main()
