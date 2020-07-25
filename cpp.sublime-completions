@@ -52,5 +52,7 @@
         "tolower(${1:})",
         "toupper(${1:})",
         "erase(${1:})",
+        "memset(${1:}, ${2:}, sizeof(${3:}));",
+        "distance(${1:}, ${2:})",
     ]
 }
