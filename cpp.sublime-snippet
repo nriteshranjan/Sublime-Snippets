@@ -18,6 +18,7 @@
 #define  f(i,n)         for(int i=0;i<n;++i)
 #define  test           int T; cin>>T; while(T--)
 #define  rep(i,s,e)     for(int i=s;i<e;++i)
+#define  repd(i,e,s)    for(int i=e;i>=s;--i)
 #define  reset(v)       memset((v), 0, sizeof(v))
 #define  deb(x)         cerr << #x << " is " << x << endl;
 #define  fast_io        ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
