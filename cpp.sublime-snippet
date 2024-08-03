@@ -1,34 +1,39 @@
 <snippet>
 	<content><![CDATA[
+/*********************************************************
+ *                                                       *
+ *   "It is not important to be better than someone      *
+ *   else, but to be better than you were yesterday.”    *
+ *                   — Master Oogway, Kung Fu Panda      *
+ *                                                       *
+ *********************************************************/
+
 #include "bits/stdc++.h"
-#define  int            long long
-#define  fi             first
-#define  se             second
-#define  endl           '\n'
-#define  mp             make_pair
-#define  pb             push_back
-#define  MOD            1000000007
-#define  INF            0x3f3f3f3f
-#define  vi             vector<int>
-#define  pii            pair<int,int>
-#define  mii            map<int,int>
-#define  eb             emplace_back
-#define  float          long double
-#define  all(v)         v.begin(), v.end()
-#define  f(i,n)         for(int i=0;i<n;++i)
-#define  test           int T; cin>>T; while(T--)
-#define  rep(i,s,e)     for(int i=s;i<e;++i)
-#define  repd(i,e,s)    for(int i=e;i>=s;--i)
-#define  reset(v)       memset((v), 0, sizeof(v))
-#define  deb(x)         cerr << #x << " is " << x << endl;
-#define  fast_io        ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+
+#define int         long long
+#define float       long double
+#define MOD         1000000007ll
+#define endl        '\n'
+#define mp          make_pair
+#define pb          push_back
+#define vi          vector<int>
+#define mii         map<int,int>
+#define pii         pair<int,int>
+#define all(v)      v.begin(), v.end()
+#define rep(i,a,n)  for(int i = (a); i <= (n); ++i)
+#define repD(i,a,n) for(int i = (a); i >= (n); --i)
+#define deb(x)      cerr << #x << " is " << x << endl;
+#define fast_io     ios_base::sync_with_stdio(false); cin.tie(nullptr);
 using namespace std;
 
-signed main()
+signed main() 
 {
-	fast_io
-
-	return 0;
+    fast_io
+    int T = 1;
+    cin >> T;
+    while (T--) {
+    }
+    return 0;
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
