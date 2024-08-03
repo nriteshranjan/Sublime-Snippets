@@ -1,0 +1,18 @@
+-> Setup homebrew
+brew install gcc
+/opt/homebrew/bin
+ls
+g++ --version
+sudo rm g++
+ln -s g++-14 g++
+(post this restart the terminal)
+g++ --version
+g++-14 --version
+ls -ltrh
+which g++-14
+which g++
+sudo ln -s /opt/homebrew/opt/gcc/bin/g++-14  /usr/local/bin/g++
+
+
+-> Add this flag to C++ Single File
+-std=c++17 add in c++ build file
