@@ -16,3 +16,7 @@ sudo ln -s /opt/homebrew/opt/gcc/bin/g++-14  /usr/local/bin/g++
 
 -> Add this flag to C++ Single File
 -std=c++17 add in c++ build file
+
+-> Also add the below flags in .zshrc and source it and then restart sublime:
+export CPATH=/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
