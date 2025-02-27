@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+int power(int x, unsigned int y) 
+{
+    int res = 1;
+    while (y > 0) 
+    {
+        if (y & 1) res *= x;
+        x *= x;
+        y >>= 1;
+    }
+    return res;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fastexpo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

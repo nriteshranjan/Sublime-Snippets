@@ -1,0 +1,24 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"theme": "Material-Theme-Darker.sublime-theme",
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"font_options": ["gray_antialias", "subpixel_antialias", "no_italic", "no_bold"], // Best for Retina
+	"indent_guide_options": ["draw_normal", "draw_active"], // Highlight active indent
+	"line_padding_bottom": 3, // More spacing for readability
+	"line_padding_top": 3,
+	"overlay_scroll_bars": "enabled",
+	"index_files": true,
+	"font_face": "JetBrains Mono", // Great for coding on Retina
+	"font_size": 16,
+	"gutter": true, // Ensure line numbers are always visible
+	"highlight_line": false, // Highlight the current line
+	"scroll_past_end": true, // Allow scrolling past the last line
+	"word_wrap": false, // Disable wrapping for clean layout
+	"wide_caret": true, // Makes the cursor more visible
+	"material_theme_accent_blue": true,
+}

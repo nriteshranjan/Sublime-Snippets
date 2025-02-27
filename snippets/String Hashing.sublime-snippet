@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+struct Hash {
+
+    // Constants for hashing bases
+    // const int MOD = 1e9 + 7;
+    const int BASE1 = 5689;
+    const int BASE2 = 8861;
+
+    vector<pair<int, int>> hashes, Pow; // Hash and power arrays
+
+    Hash(string s) {
+        hashes.assign(s.size() + 1, {1 , 1}); // 1-based indexing
+        Pow.assign(s.size() + 1, {1 , 1});
+
+        for (int i = 0; i < s.size(); ++i) {
+            hashes[i + 1] = {  (1ll * hashes[i].first * BASE1 + (s[i] - 'a' + 1)) % MOD,
+                               (1ll * hashes[i].second * BASE2 + (s[i] - 'a' + 1)) % MOD
+                            };
+
+            Pow[i + 1] = {  (1ll * Pow[i].first * BASE1) % MOD,
+                            (1ll * Pow[i].second * BASE2) % MOD
+                         };
+        }
+    }
+
+    // Function to get hash of a substring [l, r] (0-based indexing)
+    pair<int, int> get(int l, int r) {
+        ++l , ++r; // Convert to 1-based indexing
+
+        int hash1 = (hashes[r].first - (1ll * hashes[l - 1].first * Pow[r - l + 1].first) % MOD + MOD) % MOD;
+        int hash2 = (hashes[r].second - (1ll * hashes[l - 1].second * Pow[r - l + 1].second) % MOD + MOD) % MOD;
+
+        return {hash1 , hash2};
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>stringhash</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+const int MAX_N = 10000002;
+int p[MAX_N];
+
+void buildSieve()
+{
+	for(int i = 4; i < MAX_N; i += 2)
+		p[i] = 2;
+	for(int i = 3; i * i < MAX_N; i += 2)
+	{
+		if(!p[i])
+		{
+			for(int j = i * i; j < MAX_N; j += i)
+			{
+				if(!p[j])
+				p[j] = i;
+			}
+		}
+	}
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sieve</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

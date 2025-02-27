@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+vector<int>
+]]></content>
+    <tabTrigger>vi</tabTrigger>
+    <scope>source.c++, source.cpp</scope>
+</snippet>

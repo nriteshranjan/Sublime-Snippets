@@ -1,0 +1,72 @@
+<snippet>
+	<content><![CDATA[
+const int letters = 26;
+struct Node {
+    vector<int> children;
+    int strings_ending_here = 0, strings_going_below = 0;
+    Node() : children(letters, -1) {}
+};
+
+struct Trie {
+    vector<Node> trie_tree;
+    Trie() { trie_tree.emplace_back(); }
+
+    void add_string(const string &x) {
+        int current_node = 0;
+        for (char c : x) {
+            int index = c - 'a';
+            if (trie_tree[current_node].children[index] == -1) {
+                trie_tree[current_node].children[index] = trie_tree.size();
+                trie_tree.emplace_back();
+            }
+            trie_tree[current_node].strings_going_below++;
+            current_node = trie_tree[current_node].children[index];
+        }
+        trie_tree[current_node].strings_going_below++;
+        trie_tree[current_node].strings_ending_here++;
+    }
+
+    bool search_string(const string &x) {
+        int current_node = 0;
+        for (char c : x) {
+            int index = c - 'a';
+            if (trie_tree[current_node].children[index] == -1) return false;
+            current_node = trie_tree[current_node].children[index];
+        }
+        return trie_tree[current_node].strings_ending_here > 0;
+    }
+
+    void delete_string(const string &x) {
+        if (!search_string(x)) return;
+
+        int current_node = 0;
+        stack<pair<int, int>> encounteredNodes;
+
+        for (char c : x) {
+            int index = c - 'a';
+            encounteredNodes.push({current_node, index});
+            current_node = trie_tree[current_node].children[index];
+        }
+
+        trie_tree[current_node].strings_ending_here--;
+        trie_tree[current_node].strings_going_below--;
+
+        while (!encounteredNodes.empty()) {
+            auto [parent, index] = encounteredNodes.top();
+            encounteredNodes.pop();
+
+            trie_tree[parent].strings_going_below--;
+
+            int child = trie_tree[parent].children[index];
+            if (trie_tree[child].strings_going_below == 0) {
+                trie_tree[parent].children[index] = -1;
+            }
+        }
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>trie</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

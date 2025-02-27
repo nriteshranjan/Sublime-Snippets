@@ -1,0 +1,55 @@
+<snippet>
+	<content><![CDATA[
+int n = 8;
+vector<int> arr = {10, 20, 5, 4, 3, 2, 7, 11};
+vector<int> sgt(4 * n);
+
+int leftNode(int index){
+    return 2 * index;
+}
+int rightNode(int index){
+    return 2 * index + 1;
+}
+void updateCurrentNode(int index){
+    sgt[index] = sgt[leftNode(index)] + sgt[rightNode(index)];
+}
+void buildTree(int index, int start, int end){
+    if(start == end)  {   // leaf node
+        sgt[index] = arr[start]; 
+        return;
+    }
+    int mid = (start + end) / 2;     // internal node
+    buildTree(leftNode(index), start, mid);
+    buildTree(rightNode(index), mid + 1, end);
+    updateCurrentNode(index);
+}
+
+void update(int index, int start, int end, int tIndex, int tValue){
+    if(start == end){   // leaf node
+        arr[start] = tValue, sgt[index] = tValue; 
+        return;
+    }
+    int mid = (start + end) / 2;     // internal node
+    if(mid >= tIndex)
+        update(leftNode(index), start, mid, tIndex, tValue);
+    else
+        update(rightNode(index), mid + 1, end, tIndex, tValue);
+    updateCurrentNode(index);
+}
+
+int query(int index, int start, int end, int qL, int qR){
+    if(start >= qL && end <= qR)     // complete overalp
+        return sgt[index];
+    if(start > qR || end < qL)     // no overlap
+        return 0;
+    int mid = (start + end) / 2;     // complete overalp
+    int ansL = query(leftNode(index), start, mid, qL, qR);
+    int ansR = query(rightNode(index), mid + 1, end, qL, qR);
+    return ansL + ansR;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>segtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

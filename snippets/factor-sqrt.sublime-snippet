@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+vector<int> factors(int n)
+{
+    vector<int> ret;
+    for (int d = 1; d * d <= n; ++d)
+    {
+        if (n % d == 0)
+        {
+            ret.push_back(d);
+            if (n / d != d) ret.push_back(n / d);
+        }
+    }
+    return ret;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>factorsSqrt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>

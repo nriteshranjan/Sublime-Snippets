@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+struct unionfind{
+	vi p,s;
+	int c;
+	unionfind(int n):p(n,-1),s(n,1),c(n){}
+	int find(int a){
+		return p[a]==-1?a:(p[a]=find(p[a]));
+	}
+	//set b to a child of a
+	bool unite(int a,int b) {
+		a=find(a);
+		b=find(b);
+		if(a==b)return false;
+		p[b]=a;
+		s[a]+=s[b];
+		c--;
+		return true;
+	}
+	bool same(int a,int b){
+		return find(a)==find(b);
+	}
+	int sz(int a){
+		return s[find(a)];
+	}
+};]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dsu</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++, source.cpp</scope>
+</snippet>
