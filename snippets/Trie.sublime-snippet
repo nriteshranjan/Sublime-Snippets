@@ -63,6 +63,18 @@ struct Trie {
             }
         }
     }
+
+    void print_trie(int node = 0, string prefix = "") {
+        for (int i = 0; i < letters; i++) {
+            if (trie_tree[node].children[i] != -1) {
+                char ch = 'a' + i;
+                int child = trie_tree[node].children[i];
+                cout << prefix + ch << " (End: " << trie_tree[child].strings_ending_here
+                     << ", Below: " << trie_tree[child].strings_going_below << ")\n";
+                print_trie(child, prefix + ch);
+            }
+        }
+    }
 };
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
